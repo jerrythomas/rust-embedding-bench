@@ -1,0 +1,15 @@
+target/
+results/
+baselines/
+vectors/
+models/
+.fastembed_cache/
+*.onnx
+*.safetensors
+*.npz
+*.bin
+*.gguf
+__pycache__/
+.venv/
+.python-version
+.DS_Store

@@ -1,0 +1,16 @@
+[package]
+name = "ort_runner"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "ort_runner"
+path = "src/main.rs"
+
+[dependencies]
+shared = { path = "../shared" }
+anyhow.workspace = true
+clap.workspace = true
+tokenizers.workspace = true
+ort = { version = "2.0.0-rc.12", features = ["download-binaries", "ndarray"] }
+

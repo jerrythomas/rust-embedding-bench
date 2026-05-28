@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "buckets": {
+    "short": [
+      "What is the capital of France?",
+      "How do I install Rust on macOS?",
+      "Why is the sky blue at noon?",
+      "Where can I find a vegan restaurant nearby?",
+      "Who invented the lightbulb in the first place?",
+      "Can dogs eat chocolate safely?",
+      "Tell me a short joke about engineers.",
+      "What time does the next train arrive at the station?",
+      "Define recursion in computer science clearly.",
+      "Is coffee bad for your heart in moderate amounts?",
+      "How tall is Mount Everest measured from sea level?",
+      "When was the printing press invented in Europe?",
+      "Convert one hundred kilometers to miles please.",
+      "What is the meaning of life according to philosophy?",
+      "Are tomatoes considered fruit or vegetable in cooking?"
+    ],
+    "medium": [
+      "Vector databases have become an essential component of modern artificial intelligence infrastructure, allowing applications to search through millions of documents using semantic similarity rather than exact keyword matching, which dramatically improves the relevance of the results returned to end users.",
+      "When you fine-tune a language model on domain-specific data, you typically start from a pretrained checkpoint and then adjust the weights using gradient descent on a smaller task-relevant dataset, which lets the model retain general knowledge while specializing for the new domain it will be deployed against.",
+      "The Rust programming language emphasizes memory safety without a garbage collector by using a system of ownership, borrowing, and lifetimes, which the compiler checks at build time, catching whole classes of bugs that other languages typically detect only at runtime or do not detect at all in practice.",
+      "Modern container orchestration platforms like Kubernetes have become the de facto standard for deploying scalable applications, providing primitives for service discovery, load balancing, automated rollouts, secret management, and horizontal pod autoscaling across heterogeneous compute clusters of varying sizes.",
+      "Retrieval-augmented generation combines a vector search step with a language model so that the model can ground its responses in up-to-date or proprietary documents that were never part of its training data, reducing hallucinations and improving the factual accuracy of generated text across many real workloads.",
+      "Single-instruction multiple-data instructions like AVX-512 let a single CPU core perform the same arithmetic operation on many data elements in parallel, which is particularly useful for matrix multiplication kernels in transformer models where billions of floating-point operations dominate inference latency in production.",
+      "Quantization techniques reduce the bit-width of model weights and activations from full precision down to eight, four, or even two bits per value, dramatically shrinking memory footprint and accelerating arithmetic at some cost in accuracy depending on the calibration method used during conversion.",
+      "Tauri is a framework for building lightweight desktop applications that pairs a Rust backend with a web frontend, producing binaries that are dramatically smaller than typical Electron applications because they reuse the operating system's existing webview rather than bundling their own copy of Chromium.",
+      "When designing a database schema for an analytical workload, denormalization can yield significant query speedups at the cost of storage overhead and slightly more complex write paths, which is a tradeoff worth making whenever read traffic vastly outweighs write traffic in the target system over its lifetime.",
+      "The transformer architecture introduced by Vaswani and colleagues in 2017 replaced recurrent and convolutional approaches in natural language processing with a self-attention mechanism that scales well on modern accelerators and has become the foundation for nearly every state-of-the-art language model that followed."
+    ],
+    "long": [
+      "When the team first started thinking seriously about adding semantic search to the product, the obvious choice was to plug in an off-the-shelf embedding service and route queries through it as needed. That worked well enough for a few hundred queries per day, but as adoption grew the latency budget started to dominate every other product decision: caching strategies, batch sizes, retry policies, and even the user interface itself had to be shaped around the fact that each embedding call cost roughly a hundred milliseconds. After a few months of working around the constraint, the engineers decided to investigate whether running the model in-process, written entirely in their preferred systems language, might shift that ceiling enough to change what features were possible at all in the product roadmap.",
+      "Building a retrieval system for a large corpus of internal documents involves a surprising number of choices that compound on each other in subtle ways. The choice of embedding model determines the dimensionality of vectors, which influences memory and index size; the index structure trades off recall against latency; the tokenizer dictates how out-of-vocabulary words and punctuation are handled, which in turn affects whether the search behaves intuitively for casual users. Most projects underestimate the importance of these decisions at the start, then spend the next several quarters reworking them once the patterns of real usage become visible in the production telemetry that everyone agrees they should have been collecting from day one of the project.",
+      "The history of database systems is in some ways the history of giving up on universal abstractions in favor of workload-specific ones. Relational databases dominated for decades precisely because they offered a single mental model that could be adapted to almost any use case, but the rise of web-scale services and analytical workloads exposed the limits of that universality. Today the landscape is fragmented into key-value stores, document stores, columnar engines, graph databases, time-series stores, and vector databases, each optimized for a particular set of access patterns, and the architectural challenge has shifted from picking the right database to wiring several of them together so they remain coherent under failure and high load.",
+      "Performance optimization is one of the few engineering activities where intuition is reliably worse than measurement. Engineers who have spent decades writing code in a particular language often have strong beliefs about which constructs are fast and which are slow, but profiling consistently reveals that the actual hot spots in a real system have very little to do with those beliefs and a great deal to do with cache behavior, branch prediction, memory bandwidth, and the cost of crossing process or network boundaries. The discipline of measuring before optimizing is widely preached and rarely practiced, which is why the engineers who do practice it tend to produce code that runs noticeably faster than what most of their peers can write in the same amount of time."
+    ]
+  }
+}

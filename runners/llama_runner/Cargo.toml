@@ -1,0 +1,14 @@
+[package]
+name = "llama_runner"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "llama_runner"
+path = "src/main.rs"
+
+[dependencies]
+shared = { path = "../shared" }
+anyhow.workspace = true
+clap.workspace = true
+llama-cpp-2 = { version = "0.1.146", default-features = false, features = ["metal"] }
