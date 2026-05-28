@@ -135,13 +135,13 @@ F16 GGUF was indistinguishable from fp32 for retrieval purposes. Naive dynamic i
 The harness lives in this directory. After cloning the repository:
 
 ```
-cd minilm-bench
-./run_all.sh
+cd rust-embedding-bench
+make bench
 ```
 
-The script auto-installs Python dependencies into a `uv`-managed `.venv`, builds all Rust runners in release mode, downloads model files (ONNX, GGUF, safetensors), runs the full sweep, validates correctness against the Python reference, and prints an aggregated table. Full cycle is about 10 minutes on warm caches; first run takes longer because of dep downloads and the ONNX export.
+The pipeline auto-installs Python dependencies into a `uv`-managed `.venv`, builds all Rust runners in release mode, downloads model files (ONNX, GGUF, safetensors), runs the full sweep, validates correctness against the Python reference, and prints an aggregated table. Full cycle is about 10 minutes on warm caches; first run takes longer because of dep downloads and the ONNX export.
 
-Environment knobs:
+Sweep config knobs (env or `make VAR=...`):
 
 ```
 SKIP="ollama"               # space-separated backends to skip
@@ -151,4 +151,6 @@ THREADS="1 4 8"             # thread configs
 WARMUP=50 MEASURE=500       # per-run sample counts
 ```
 
-Each result is written as a JSON record in `results/`. `analyze/compare.py results/` re-renders the comparison table at any time.
+Other Makefile targets: `make build`, `make sweep`, `make aggregate`, `make correctness`, `make clean`, `make nuke`. `make help` lists them.
+
+Each result is written as a JSON record in `results/`. `make aggregate` (or `python analyze/compare.py results/`) re-renders the comparison table at any time.
