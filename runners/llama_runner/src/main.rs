@@ -21,8 +21,8 @@ struct LlamaArgs {
     common: CommonArgs,
 
     /// Path to the GGUF model file. The all-MiniLM-L6-v2 F16 GGUF that ollama uses
-    /// lives at ~/.ollama/models/blobs/<sha>; the run_all.sh script copies it into
-    /// models/all-MiniLM-L6-v2-gguf/model.gguf.
+    /// lives at ~/.ollama/models/blobs/<sha>; `make models` (via
+    /// reference/download_gguf.py) copies it into models/all-MiniLM-L6-v2-gguf/model.gguf.
     #[arg(long, default_value = "models/all-MiniLM-L6-v2-gguf/model.gguf")]
     model: PathBuf,
 }

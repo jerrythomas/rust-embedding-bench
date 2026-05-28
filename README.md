@@ -150,8 +150,8 @@ mkdir -p runners/foo_runner/src
 cp runners/fastembed_runner/Cargo.toml runners/foo_runner/Cargo.toml
 cp runners/fastembed_runner/src/main.rs runners/foo_runner/src/main.rs
 # Edit the dependencies and the embed loop. Add foo_runner to the workspace
-# members in the root Cargo.toml. Add "foo" to BACKENDS in run_all.sh.
-./run_all.sh
+# members in the root Cargo.toml. Add "foo" to the BACKENDS list in the Makefile.
+make bench
 ```
 
 Run with `--save-vectors vectors/foo_short.bin` once and let the harness compare them to the reference vectors. The correctness check catches most "the embedding pipeline is wired wrong" bugs before any latency claim becomes load-bearing.
