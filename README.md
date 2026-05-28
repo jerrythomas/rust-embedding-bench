@@ -111,15 +111,16 @@ Individual runners can also be invoked directly:
 ```
 .
 ├── Makefile                    # entry point (`make bench`, `make help`, ...)
-├── run_all.sh                  # full pipeline (called by `make bench`)
 ├── REPORT.md                   # methodology + full results
+├── LICENSE                     # MIT
 ├── Cargo.toml                  # Rust workspace
 ├── corpus/sentences.json       # 29 deterministic test sentences
 ├── reference/
 │   ├── generate_reference.py   # Python sentence-transformers reference
 │   ├── export_onnx.py          # ONNX export via optimum
 │   ├── quantize.py             # dynamic int8 quantization
-│   └── download_qdrant.py      # Qdrant pre-optimized ONNX
+│   ├── download_qdrant.py      # Qdrant pre-optimized ONNX
+│   └── download_gguf.py        # F16 GGUF (Ollama cache or HF Hub)
 ├── runners/
 │   ├── shared/                 # common CLI args, result schema, IO helpers
 │   ├── fastembed_runner/
@@ -167,4 +168,4 @@ If you re-run this on different hardware, the harness will produce JSON output y
 
 ## License
 
-Not yet specified. Until a `LICENSE` file is added, the contents of this repository should be treated as "all rights reserved." Suggested: MIT or Apache-2.0.
+[MIT](LICENSE).
