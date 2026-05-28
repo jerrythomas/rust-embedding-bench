@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="rust-embedding-bench — throughput comparison across fastembed, ort, candle, ollama, llama-cpp-2 on Apple M4 Max" width="100%">
+</p>
+
 # rust-embedding-bench
 
 A reproducible benchmark harness for sentence-embedding throughput across the popular Rust ML libraries, using `sentence-transformers/all-MiniLM-L6-v2` as the common model.
